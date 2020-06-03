@@ -6,9 +6,7 @@
 		$sql="insert into purchase (customer, date_purchase) values ('$customer', NOW())";
 		$conn->query($sql);
 		$pid=$conn->insert_id;
- 
 		$total=0;
- 
 		foreach($_POST['productid'] as $product):
 		$proinfo=explode("||",$product);
 		$productid=$proinfo[0];

@@ -2,11 +2,11 @@
 <body>
 <?php include('navbar.php'); ?>
 <div class="container">
-	<h1 class="page-header text-center">PRODUCTS CRUD</h1>
+	<h1 class="page-header text-center">Automobīļi</h1>
 	<div class="row">
 		<div class="col-md-12">
 			<select id="catList" class="btn btn-default">
-			<option value="0">All Category</option>
+			<option value="0">Visas kategorijas</option>
 			<?php
 				$sql="select * from category";
 				$catquery=$conn->query($sql);
@@ -17,16 +17,15 @@
 				}
 			?>
 			</select>
-			<a href="#addproduct" data-toggle="modal" class="pull-right btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Product</a>
+			<a href="#addproduct" data-toggle="modal" class="pull-right btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Pievienot auto</a>
 		</div>
 	</div>
 	<div style="margin-top:10px;">
 		<table class="table table-striped table-bordered">
 			<thead>
-				<th>Photo</th>
-				<th>Product Name</th>
-				<th>Price</th>
-				<th>Action</th>
+				<th>Attēls</th>
+				<th>Auto modelis</th>
+				<th>Cena</th>
 			</thead>
 			<tbody>
 				<?php
@@ -43,9 +42,9 @@
 						<tr>
 							<td><a href="<?php if(empty($row['photo'])){echo "upload/noimage.jpg";} else{echo $row['photo'];} ?>"><img src="<?php if(empty($row['photo'])){echo "upload/noimage.jpg";} else{echo $row['photo'];} ?>" height="30px" width="40px"></a></td>
 							<td><?php echo $row['productname']; ?></td>
-							<td>&#8369; <?php echo number_format($row['price'], 2); ?></td>
+							<td>&euro; <?php echo number_format($row['price'], 2); ?></td>
 							<td>
-								<a href="#editproduct<?php echo $row['productid']; ?>" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct<?php echo $row['productid']; ?>" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+								<a href="#editproduct<?php echo $row['productid']; ?>" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Rediģēt</a> || <a href="#deleteproduct<?php echo $row['productid']; ?>" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Dzēst</a>
 								<?php include('product_modal.php'); ?>
 							</td>
 						</tr>
@@ -57,19 +56,5 @@
 	</div>
 </div>
 <?php include('modal.php'); ?>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#catList").on('change', function(){
-			if($(this).val() == 0)
-			{
-				window.location = 'product.php';
-			}
-			else
-			{
-				window.location = 'product.php?category='+$(this).val();
-			}
-		});
-	});
-</script>
 </body>
 </html>

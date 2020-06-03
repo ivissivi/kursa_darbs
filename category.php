@@ -2,17 +2,17 @@
 <body>
 <?php include('navbar.php'); ?>
 <div class="container">
-	<h1 class="page-header text-center">CATEGORY CRUD</h1>
+	<h1 class="page-header text-center">Pievienot Kategoriju</h1>
 	<div class="row">
 		<div class="col-md-12">
-			<a href="#addcategory" data-toggle="modal" class="pull-right btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Category</a>
+			<a href="#addcategory" data-toggle="modal" class="pull-right btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Kategorija</a>
 		</div>
 	</div>
 	<div style="margin-top:10px;">
 		<table class="table table-striped table-bordered">
 			<thead>
-				<th>Category Name</th>
-				<th>Action</th>
+				<th>Kategorijas nosaukums</th>
+				<th>Pievienot</th>
 			</thead>
 			<tbody>
 				<?php
@@ -23,7 +23,7 @@
 						<tr>
 							<td><?php echo $row['catname']; ?></td>
 							<td>
-								<a href="#editcategory<?php echo $row['categoryid']; ?>" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deletecategory<?php echo $row['categoryid']; ?>" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+								<a href="#editcategory<?php echo $row['categoryid']; ?>" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Rediģēt</a> || <a href="#deletecategory<?php echo $row['categoryid']; ?>" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Dzēst</a>
 								<?php include('category_modal.php'); ?>
 							</td>
 						</tr>

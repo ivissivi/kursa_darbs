@@ -2,15 +2,15 @@
 <body>
 <?php include('navbar.php'); ?>
 <div class="container">
-	<h1 class="page-header text-center">ORDER</h1>
+	<h1 class="page-header text-center">Pasūtīt</h1>
 	<form method="POST" action="purchase.php">
 		<table class="table table-striped table-bordered">
 			<thead>
 				<th class="text-center"><input type="checkbox" id="checkAll"></th>
-				<th>Category</th>
-				<th>Car Model</th>
-				<th>Price</th>
-				<th>Days</th>
+				<th>Kategorija</th>
+				<th>Mašīnas modelis</th>
+				<th>Cena</th>
+				<th>Dienas</th>
 			</thead>
 			<tbody>
 				<?php 
@@ -38,17 +38,10 @@
 				<input type="text" name="customer" class="form-control" placeholder="Customer Name" required>
 			</div>
 			<div class="col-md-2" style="margin-left:-20px;">
-				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Saglabāt</button>
 			</div>
 		</div>
 	</form>
 </div>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#checkAll").click(function(){
-	    	$('input:checkbox').not(this).prop('checked', this.checked);
-		});
-	});
-</script>
 </body>
 </html>
