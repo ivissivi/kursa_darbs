@@ -51,7 +51,7 @@
 											<img src="<?php if(empty($pfrow['photo'])){echo "upload/noimage.jpg";} else{echo $pfrow['photo'];} ?>" height="225px;" width="100%">
 										</div>
 										<div class="panel-footer text-center">
-											&#x20A8; <?php echo number_format($pfrow['price'], 2); ?>
+											&euro; <?php echo number_format($pfrow['price'], 2); ?>
 										</div>
 									</div>
 								</div>
@@ -92,7 +92,7 @@
 											<img src="<?php if($prow['photo']==''){echo "upload/noimage.jpg";} else{echo $prow['photo'];} ?>" height="225px;" width="100%">
 										</div>
 										<div class="panel-footer text-center">
-											&#x20A8; <?php echo number_format($prow['price'], 2); ?>
+											&euro; <?php echo number_format($prow['price'], 2); ?>
 										</div>
 									</div>
 								</div>

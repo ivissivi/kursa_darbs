@@ -56,5 +56,19 @@
 	</div>
 </div>
 <?php include('modal.php'); ?>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#catList").on('change', function(){
+            if($(this).val() == 0)
+            {
+                window.location = 'product.php';
+            }
+            else
+            {
+                window.location = 'product.php?category='+$(this).val();
+            }
+        });
+    });
+</script>
 </body>
 </html>
